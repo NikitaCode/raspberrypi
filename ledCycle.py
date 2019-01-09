@@ -9,27 +9,25 @@ GPIO.setwarnings(False)
 
 for x in pinArray:
     GPIO.setup(x,GPIO.OUT)
-    GPIO.output(18,0)
+    GPIO.output(x,0)
 
-GPIO.output(pinArray[currentLED],1)
+# GPIO.output(pinArray[currentLED],1)
 
-counter = 1
-i = 1
-# while i < 9999:
-#     i += 1
-#     if counter==1:
-#         nameOne=input("LED on? Y/N")
-#         if nameOne=='y':
-#             GPIO.output(18,GPIO.HIGH)
-#             counter+=1
-#         if not nameOne=='y':
-#             GPIO.output(18,GPIO.LOW)
-#
-#
-#     if counter==2:
-#         nameTwo = input('Turn LED Off? Y/N')
-#         if nameTwo=='y':
-#             GPIO.output(18,GPIO.LOW)
-#             counter-=1
-#         if not nameTwo=='y':
-#             GPIO.output(18,GPIO.HIGH)
+while True:
+    i += 1
+    nameOne=input("Move Left or Rigth (L / R)")
+    if nameOne=='l':
+        currentLED -= 1
+        GPIO.output(pinArray[currentLED],GPIO.HIGH)
+    else if nameOne =='l':
+        GPIO.output(pinArray[currentLED],GPIO.HIGH)
+        currentLED += 1
+
+
+
+    # nameTwo = input('Turn LED Off? Y/N')
+    # if nameTwo=='y':
+    #     GPIO.output(18,GPIO.LOW)
+    #     counter-=1
+    # if not nameTwo=='y':
+    #     GPIO.output(18,GPIO.HIGH)
