@@ -14,14 +14,20 @@ for x in pinArray:
 # GPIO.output(pinArray[currentLED],1)
 
 while True:
-    i += 1
-    nameOne=input("Move Left or Rigth (L / R)")
-    if nameOne=='l':
+    moveAction=raw_input("Move Left or Rigth (L / R)")
+    if moveAction=='l':
         currentLED -= 1
         GPIO.output(pinArray[currentLED],GPIO.HIGH)
-    else if nameOne =='l':
+        
+ if moveAction=='r':
+        currentLED -= 1
         GPIO.output(pinArray[currentLED],GPIO.HIGH)
-        currentLED += 1
+        
+ if currentLED == -1:
+    currentLED = 4
+    
+ if currentLED == 5
+    currentLED = 0
 
 
 
